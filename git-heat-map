@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+git_commits() {
+  git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+}
+git_commits
