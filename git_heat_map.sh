@@ -186,6 +186,7 @@ gum_prompt() {
 	echo "$input"
 }
 
+# TODO: filter out removed files (i.e., 'git rm')
 # Get the most changed files/directories
 git_commits() {
 	local results
@@ -199,6 +200,7 @@ git_commits() {
 		| head -n "$results"
 }
 
+# TODO: add newline before and after the output
 # Format the output
 format_output() {
 	local use_gum results max_length header_changes
