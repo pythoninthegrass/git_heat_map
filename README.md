@@ -32,21 +32,42 @@ ln -s $(pwd)/git_heat_map.sh ~/.local/bin/ghm
 
 ```bash
 # run script as-is
-λ ./git_heat_map.sh
+λ ghm
   ▌ Git Heat Map Results
   
-  Changes│File/Folder 
-  ───────┼────────────
-  1      │git-heat-map
+  Changes│File/Folder    
+  ───────┼───────────────
+  2      │git-heat-map   
+  1      │git_heat_map.sh
+  1      │README.md      
+  1      │.tool-versions 
 
 # run script with arguments
-λ USE_GUM=true LOG=log ./git_heat_map.sh 5
+λ USE_GUM=true LOG=log ghm 5
   ▌ Git Heat Map Results
   
-  Changes│File/Folder 
-  ───────┼────────────
-  1      │git-heat-map
+  Changes│File/Folder    
+  ───────┼───────────────
+  2      │git-heat-map   
+  1      │git_heat_map.sh
+  1      │README.md      
+  1      │.tool-versions
 
+λ USE_GUM=true LOG=both ghm 5
+Wed, 02 Oct 2024 18:06:33 CDT INFO Git repository detected at ~/git/git_heatmap
+Wed, 02 Oct 2024 18:06:33 CDT INFO Fetching git commit data for 5 results
+Wed, 02 Oct 2024 18:06:33 CDT INFO Formatting output
+  ▌ Git Heat Map Results
+  
+  Changes│File/Folder    
+  ───────┼───────────────
+  2      │git-heat-map   
+  1      │git_heat_map.sh
+  1      │README.md      
+  1      │.tool-versions 
+Wed, 02 Oct 2024 18:06:33 CDT INFO Git heat map generation complete
+
+# check log file
 λ cat /tmp/git_heat_map.log 
 Wed, 02 Oct 2024 17:49:26 CDT INFO Git repository detected at ~/git/git_heatmap
 Wed, 02 Oct 2024 17:49:26 CDT INFO Fetching git commit data for 5 results
